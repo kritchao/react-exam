@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Forms from './components/Forms';
+import Lists from './components/Lists'
 
 function App() {
+  const [allData, setAllData] = useState(() => {
+    const data = localStorage.getItem('data');
+    return data !== null
+      ? JSON.parse(data)
+      : [];
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Forms allData={allData} setAllData={setAllData} />
+      <Lists allData={allData} setAllData={setAllData} />
     </div>
+
   );
 }
 

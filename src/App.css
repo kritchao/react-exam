@@ -1,5 +1,21 @@
 .App {
   text-align: center;
+  padding: 50 px;
+  margin: 50px;
+  
+}
+
+.Form {
+  font-family: 'Quicksand', sans-serif;
+  background-color: rgb(255, 255, 255);
+  padding: 50px;
+  border: 1px solid black;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .App-logo {
